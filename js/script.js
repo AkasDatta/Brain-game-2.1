@@ -368,26 +368,26 @@ let mGameRenderer = (data = {}, mDOM) => {
                             let mSet = (mE = document.body) => {
 
                                 // on_scr_end..
-                                let on_scr_end = () => {
-                                    let timeline = anime.timeline();
-                                    timeline.add({
-                                        targets: mScr,
-                                        opacity: 0,
-                                        duration: 3000,
-                                        easing: 'easeOutExpo',
-                                        update: function (anim) {
-                                            // mSendCB(`on_scr_end`, {});
-                                            console.log(anim.progress);
+                                // let on_scr_end = () => {
+                                //     let timeline = anime.timeline();
+                                //     timeline.add({
+                                //         targets: mScr,
+                                //         opacity: 0,
+                                //         duration: 3000,
+                                //         easing: 'easeOutExpo',
+                                //         update: function (anim) {
+                                //             // mSendCB(`on_scr_end`, {});
+                                //             console.log(anim.progress);
 
-                                            if (anim.progress > 0) {
-                                                anime.remove(mScr);
-                                                mScr.remove();
-                                                //send cb..
-                                                mSendCB(`on_scr_end`, {});
-                                            }
-                                        },
-                                    });
-                                };
+                                //             if (anim.progress > 0) {
+                                //                 anime.remove(mScr);
+                                //                 mScr.remove();
+                                //                 //send cb..
+                                //                 mSendCB(`on_scr_end`, {});
+                                //             }
+                                //         },
+                                //     });
+                                // };
                             };
 
                             mSet(mScr);
@@ -423,228 +423,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                             //set..
                             let mSet = (mE = document.body) => {
                                 // Score and Round Play:--
-                                //set..[Svg].. 
-                                mArtBox_evnt.add_svg({
-                                    "w": `100%`,
-                                    "h": `96vh`,
-                                    "e": mE,
-                                    "src": `${m_asset_path}/8.12.svg`
-                                }, {
-                                    "onLoad": (v = {}) => {
-                                        // //set..[Svg].. recommended
-                                        mArtBox_evnt.add_svg({
-                                            "w": `45vh`,
-                                            "h": `50vh`,
-                                            "x": 40,
-                                            "y": 10,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/Rectangle9.svg`
-                                        }
-                                        );
-
-                                        // //set..[Svg].. online
-                                        mArtBox_evnt.add_svg({
-                                            "w": `30vh`,
-                                            "h": `5vh`,
-                                            "x": 43.8,
-                                            "y": 14,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/Congratulations!.svg`
-                                        }
-                                        );
-
-                                        // //set..[Svg].. grading
-                                        mArtBox_evnt.add_svg({
-                                            "w": `15vh`,
-                                            "h": `2vh`,
-                                            "x": 47.5,
-                                            "y": 20,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/RoundCleared.svg`
-                                        }
-                                        );
-
-                                        mArtBox_evnt.add_svg({
-                                            "w": `55vh`,
-                                            "h": `12vh`,
-                                            "x": 37.5,
-                                            "y": 26,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/Vector74.svg`
-                                        }
-                                        );
-
-                                        mArtBox_evnt.add_svg({
-                                            "w": `8vh`,
-                                            "h": `8vh`,
-                                            "x": 45,
-                                            "y": 27.2,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/Star3.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": `8vh`,
-                                            "h": `8vh`,
-                                            "x": 49.5,
-                                            "y": 26.2,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/Star1.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": `8vh`,
-                                            "h": `8vh`,
-                                            "x": 54,
-                                            "y": 27.1,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/Star2.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": `15vh`,
-                                            "h": `5vh`,
-                                            "x": 47,
-                                            "y": 44,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/Score_ 49.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": `15vh`,
-                                            "h": `3vh`,
-                                            "x": 47,
-                                            "y": 53,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/Time_ 00_30.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": ``,
-                                            "h": ``,
-                                            "x": 25,
-                                            "y": 14,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/bolt.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": ``,
-                                            "h": ``,
-                                            "x": 8,
-                                            "y": 37,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/bolt.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": ``,
-                                            "h": ``,
-                                            "x": 25,
-                                            "y": 54,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/bolt.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": ``,
-                                            "h": ``,
-                                            "x": 8,
-                                            "y": 82,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/bolt.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": `45vh`,
-                                            "h": `10vh`,
-                                            "x": 40,
-                                            "y": 72,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/Rectangle3.svg`
-                                        }
-                                        );
-
-                                        // btn:-
-                                        mArtBox_evnt.add_svg({
-                                            "w": `28vh`,
-                                            "h": `4vh`,
-                                            "x": 44,
-                                            "y": 75,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/NextRound.svg`
-                                        }, {
-                                            "onClick": (v = {}) => {
-                                                nextRoundBtn();
-                                            }
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": ``,
-                                            "h": ``,
-                                            "x": 87,
-                                            "y": 14,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/bolt.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": ``,
-                                            "h": ``,
-                                            "x": 70,
-                                            "y": 37,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/bolt.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": ``,
-                                            "h": ``,
-                                            "x": 87,
-                                            "y": 54,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/bolt.svg`
-                                        }
-                                        );
-                                        mArtBox_evnt.add_svg({
-                                            "w": ``,
-                                            "h": ``,
-                                            "x": 70,
-                                            "y": 82,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/bolt.svg`
-                                        });
-
-                                        let nextRoundBtn = () => {
-                                            v.e.style.opacity = "0";
-                                            v.e.remove();
-                                            on_scr_end();
-                                        }
-                                    }
-                                });
-
-                                // on_scr_end..
-                                let on_scr_end = () => {
-                                    let timeline = anime.timeline();
-                                    timeline.add({
-                                        targets: mScr,
-                                        opacity: 0,
-                                        duration: 3000,
-                                        easing: 'easeOutExpo',
-                                        update: function (anim) {
-                                            // mSendCB(`on_scr_end`, {});
-                                            console.log(anim.progress);
-
-                                            if (anim.progress > 0) {
-                                                anime.remove(mScr);
-                                                mScr.remove();
-                                                //send cb..
-                                                mSendCB(`on_scr_end`, {});
-                                            }
-                                        },
-                                    });
-                                };
-
+                               
                             };
                             mSet(mScr);
                         }
@@ -679,37 +458,34 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                             //set..
                             let mSet = (mE = document.body) => {
-                                // Ready-set-go Loading:--
-
-
                                 // on_scr_end..
-                                let on_scr_end = () => {
-                                    let timeline = anime.timeline();
-                                    timeline.add({
-                                        targets: mScr,
-                                        opacity: 0,
-                                        duration: 3000,
-                                        easing: 'easeOutExpo',
-                                        update: function (anim) {
-                                            // mSendCB(`on_scr_end`, {});
-                                            console.log(anim.progress);
+                                // let on_scr_end = () => {
+                                //     let timeline = anime.timeline();
+                                //     timeline.add({
+                                //         targets: mScr,
+                                //         opacity: 0,
+                                //         duration: 3000,
+                                //         easing: 'easeOutExpo',
+                                //         update: function (anim) {
+                                //             // mSendCB(`on_scr_end`, {});
+                                //             console.log(anim.progress);
 
-                                            if (anim.progress > 0) {
-                                                anime.remove(mScr);
-                                                mScr.remove();
-                                                //send cb..
-                                                mSendCB(`on_scr_end`, {});
-                                            }
-                                        },
-                                    });
-                                };
+                                //             if (anim.progress > 0) {
+                                //                 anime.remove(mScr);
+                                //                 mScr.remove();
+                                //                 //send cb..
+                                //                 mSendCB(`on_scr_end`, {});
+                                //             }
+                                //         },
+                                //     });
+                                // };
 
                             };
                             mSet(mScr);
                         }
                     },
 
-                    // Screen-7 ------------------------------
+                    // Screen-8 ------------------------------
                     {
                         "name": "Screen 8",
                         "key": "scr_8",
