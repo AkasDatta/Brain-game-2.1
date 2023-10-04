@@ -1,0 +1,17 @@
+body {
+    background: linear-gradient(180deg, #8A08F0 0%, #000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.smaller {
+    max-width: 100%; /* Adjust this value to control the size */
+    height: auto;
+}
