@@ -45,6 +45,60 @@ let mGameRenderer = (data = {}, mDOM) => {
         "screens": {
             "rndr": {
                 "l": [
+
+                    // Screen-2 ----------
+                    {
+                        "name": "Screen 2",
+                        "key": "scr_2",
+                        "set": (k, v, thisItem) => {
+                            console.log(thisItem);
+                            v["e"].innerHTML = ``; //reset the screen
+                            console.log(v["e"]);
+
+                            //mSendCB..
+                            let mSendCB = (cb_name, p = {}) => {
+                                if (v["value"].hasOwnProperty("cb")) {
+                                    if (v["value"]["cb"].hasOwnProperty(cb_name)) {
+                                        v["value"]["cb"][cb_name](p);
+                                    }
+                                }
+                            };
+
+                            // Create the slideshow container
+                            let mScr = document.createElement("div");
+                            v["e"].appendChild(mScr);
+                            mScr.style.height = `100%`;
+                            mScr.style.width = `100%`;
+                            mScr.style.overflow = `hidden`;
+
+                            // Define image paths
+                            const m_asset_path = [
+                                "MacBook Pro 16_ - 49.svg",
+                                "MacBook Pro 16_ - 50.svg",
+                                "MacBook Pro 16_ - 51.svg",
+                                "MacBook Pro 16_ - 52.svg",
+                                "MacBook Pro 16_ - 53.svg",
+                                "MacBook Pro 16_ - 54.svg"
+                            ];
+
+                            // Show images in slideshow
+                            let currentImage = 0;
+                            function showNextImage() {
+                                mScr.innerHTML = `<img src="${m_asset_path[currentImage]}" alt="Image ${currentImage + 1}">`;
+                                currentImage = (currentImage + 1) % m_asset_path.length;
+                                setTimeout(showNextImage, 3000); // Change image every 3 seconds
+                            }
+
+                            showNextImage();
+
+                            //set..
+                            let mSet = (mE = document.body) => {
+                                // You can add additional setup here if needed
+                            };
+                            mSet(mScr);
+                        }
+                    }
+                    ,
     
                     // Screen-1 -----------
                     {
@@ -224,7 +278,38 @@ let mGameRenderer = (data = {}, mDOM) => {
 
 
                     // Screen-3 ----------
-                 
+                    {
+                        "name": "Screen 2",
+                        "key": "scr_2",
+                        "set": (k, v, thisItem) => {
+                            console.log(thisItem);
+                            v["e"].innerHTML = ``; //reset the screen
+                            console.log(v["e"]);
+
+                            //mSendCB..
+                            let mSendCB = (cb_name, p = {}) => {
+                                if (v["value"].hasOwnProperty("cb")) {
+                                    if (v["value"]["cb"].hasOwnProperty(cb_name)) {
+                                        v["value"]["cb"][cb_name](p);
+                                    }
+                                }
+                            };
+
+                            //set..
+                            let mScr = document.createElement("div");
+                            v["e"].appendChild(mScr);
+                            mScr.style.height = `100%`;
+                            mScr.style.width = `100%`;
+                            mScr.style.overflow = `hidden`;
+
+
+                            //set..
+                            let mSet = (mE = document.body) => {
+                                
+                            };
+                            mSet(mScr);
+                        }
+                    },
 
                     // Screen-4 -----------
                   
