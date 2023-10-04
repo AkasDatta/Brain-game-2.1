@@ -20,7 +20,7 @@ var url4_GVars = "http://localhost:7070/api-php-src2/SKILLEE_ENGLISH/app.php/";
 //url....(Prod)
 //https://2b5d73d87da548.lhr.life/ (http://localhost/)
 /*var tunnelUrl_GVars = "https://2b5d73d87da548.lhr.life"+"/"; 
-var url1_GVars = tunnelUrl_GVars+""; 
+var url1_GVars = tunnelUrl_GVars+"";  v
 var url2_GVars = tunnelUrl_GVars+"nodejs/";
 var url3_GVars = tunnelUrl_GVars+"";
 var url4_GVars = tunnelUrl_GVars+"api-php-src2/SKILLEE_ENGLISH/app.php/";
