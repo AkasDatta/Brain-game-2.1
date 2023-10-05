@@ -47,7 +47,7 @@ let mGameRenderer = (data = {}, mDOM) => {
             "rndr": { //Renderer..
                 "l": [ //list..
 
-                    // Screen-1 -----------------------------
+                                    // Screen-1 -----------------------------
                     {
                         "name": "Screen 1",
                         "key": "scr_1",
@@ -183,11 +183,12 @@ let mGameRenderer = (data = {}, mDOM) => {
                             mSet(mScr);
                         }
                     },
-
-                    // Screen-2 -----------------------------
+                    
+                    
+                // Screen-2 -----------------------------
                     {
-                        "name": "Screen 2",
-                        "key": "scr_2",
+                        "name": "Screen 3",
+                        "key": "scr_3",
                         "set": (k, v, thisItem) => {
                             console.log(thisItem);
                             v["e"].innerHTML = ``; //reset the screen
@@ -232,6 +233,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             "src": `${m_asset_path}/chat_bubble.svg`
                                         }, {
                                             "onLoad": (v = {}) => {
+
                                                 v.e.style.opacity = "0";
 
                                                 setTimeout(() => {
@@ -343,71 +345,6 @@ let mGameRenderer = (data = {}, mDOM) => {
                         }
                     },
 
-                    // Screen-3 -----------------------------
-                    {
-                        "name": "Screen 3",
-                        "key": "scr_3",
-                        "set": (k, v, thisItem) => {
-                            console.log(thisItem);
-                            //--reset--// [START]
-                            v["e"].innerHTML = ``; //reset
-
-                            //mSendCB..
-                            let mSendCB = (cb_name, p = {}) => {
-                                if (v["value"].hasOwnProperty("cb")) {
-                                    if (v["value"]["cb"].hasOwnProperty(cb_name)) {
-                                        v["value"]["cb"][cb_name](p);
-                                    }
-                                }
-                            };
-
-
-                            //set..
-                            let mScr = document.createElement("div");
-                            v["e"].appendChild(mScr);
-                            mScr.style.height = `100vh`;
-                            mScr.style.width = `100%`;
-                            mScr.style.overflow = `hidden`;
-
-                            //set..
-                            let mSet = (mE = document.body) => {
-                                // Robot talking animation:- [Starts]
-                                setTimeout(() => {
-                                    mArtBox_evnt.add_svg({
-                                        "w": `100vw`,
-                                        "h": `100vh`,
-                                        // "x": 26.5,
-                                        // "y": 28,
-                                        "e": mE,
-                                        "src": `${m_asset_path}/robot_talking/robot_talking_1.svg`
-                                    }, {
-                                        "onLoad": (v = {}) => {
-                                            setTimeout(() => {
-                                                // console.log(v.e);
-                                                // v.e.style.visibility = "hidden";
-                                                v.e.style.opacity = "0";
-                                            }, 300);
-                                        }
-                                    });
-                                }, 0);
-
-                                setTimeout(() => {
-                                    mArtBox_evnt.add_svg({
-                                        "w": `100vw`,
-                                        "h": `100vh`,
-                                        "x": 0,
-                                        "y": 0,
-                                        "e": mE,
-                                        "src": `${m_asset_path}/robot_talking/robot_talking_2.svg`
-                                    }, {
-                                        "onLoad": (v = {}) => {
-                                            setTimeout(() => {
-                                                // v.e.style.opacity = "0";
-                                                v.e.style.visibility = "hidden";
-                                            }, 300);
-                                        }
-                                    });
-                                }, 300);
 
                                 setTimeout(() => {
                                     mArtBox_evnt.add_svg({
@@ -641,6 +578,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                 }, 1800);
                                 // -------------|
 
+
                                 // on_scr_end..
                                 let on_scr_end = () => {
                                     let timeline = anime.timeline();
@@ -665,6 +603,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                             mSet(mScr);
                         }
                     },
+
 
                     // Screen-4 -----------------------------
                     {
@@ -1113,6 +1052,65 @@ let mGameRenderer = (data = {}, mDOM) => {
                             mSet(mScr);
                         }
                     },
+
+                    // Screen-9 ----------
+                    {
+                        "name": "Screen 9",
+                        "key": "scr_9",
+                        "set": (k, v, thisItem) => {
+                            console.log(thisItem);
+                            v["e"].innerHTML = ``; //reset the screen
+                            console.log(v["e"]);
+
+                            //mSendCB..
+                            let mSendCB = (cb_name, p = {}) => {
+                                if (v["value"].hasOwnProperty("cb")) {
+                                    if (v["value"]["cb"].hasOwnProperty(cb_name)) {
+                                        v["value"]["cb"][cb_name](p);
+                                    }
+                                }
+                            };
+
+                            // Create the slideshow container
+                            let mScr = document.createElement("div");
+                            v["e"].appendChild(mScr);
+                            mScr.style.height = `100%`;
+                            mScr.style.width = `100%`;
+                            mScr.style.overflow = `hidden`;
+
+                            // Define image paths
+                            const imagePaths = [
+                                "/assets/LastImage/MacBook Pro 16_ - 49.svg",
+                                "/assets/LastImage/MacBook Pro 16_ - 50.svg",
+                                "/assets/LastImage/MacBook Pro 16_ - 51.svg",
+                                "/assets/LastImage/MacBook Pro 16_ - 52.svg",
+                                "/assets/LastImage/MacBook Pro 16_ - 53.svg",
+                                "/assets/LastImage/MacBook Pro 16_ - .svg",
+                                "/assets/last/MacBook Pro 16_ - 50.svg",
+                                "/assets/last/MacBook Pro 16_ - 51.svg",
+                                "/assets/last/MacBook Pro 16_ - 52.svg",
+                                "/assets/last/MacBook Pro 16_ - 53.svg",
+                                "/assets/last/MacBook Pro 16_ - 54.svg"
+                            ];
+
+                            // Show images in slideshow
+                            let currentImage = 0;
+                            function showNextImage() {
+                                mScr.innerHTML = `<img src="${imagePaths[currentImage]}" alt="Image ${currentImage + 1}">`;
+                                currentImage = (currentImage + 1) % imagePaths.length;
+                                setTimeout(showNextImage, 3000); // Change image every 3 seconds
+                            }
+
+                            showNextImage();
+
+                            //set..
+                            let mSet = (mE = document.body) => {
+                                // You can add additional setup here if needed
+                            };
+                            mSet(mScr);
+                        }
+                    }
+
 
 
 

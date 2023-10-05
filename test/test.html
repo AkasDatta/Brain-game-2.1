@@ -1,23 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <link rel="stylesheet" href="test.css">
+    <title>Background Image Slideshow</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, #8A08F0 0%, #000 100%);
+        }
+
+        .slideshow-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="images">
-        <div class="image-container">
-            <img src="../assets/Group 8.svg" alt="" class="centered smaller">
-        </div>
+    <div class="slideshow-container">
+        <div class="image-container" style="background-image: url('/assets/LastImage/MacBook Pro 16_ - 49.svg');"></div>
+        <div class="image-container" style="background-image: url('/assets/LastImage/MacBook Pro 16_ - 50.svg');"></div>
+        <div class="image-container" style="background-image: url('/assets/LastImage/MacBook Pro 16_ - 51.svg');"></div>
+        <div class="image-container" style="background-image: url('/assets/LastImage/MacBook Pro 16_ - 52.svg');"></div>
+        <div class="image-container" style="background-image: url('/assets/LastImage/MacBook Pro 16_ - 53.svg');"></div>
+        <div class="image-container" style="background-image: url('/assets/LastImage/MacBook Pro 16_ - 54.svg');"></div>
+        
     </div>
 
-    <div class="loading">
-        <img src="/assets/loading.svg" alt="">
-        <div class="loading-text" id="loadingText"></div>
-    </div>
+    <script>
+        let currentImage = 0;
+        const imageContainers = document.querySelectorAll('.image-container');
 
-    <script src="test.js"></script>
+        function showNextImage() {
+            imageContainers[currentImage].style.display = 'none';
+            currentImage = (currentImage + 1) % imageContainers.length;
+            imageContainers[currentImage].style.display = 'block';
+            setTimeout(showNextImage, 3000); // Change image every 3 seconds
+        }
+
+        showNextImage();
+    </script>
 </body>
+
 </html>
