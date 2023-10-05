@@ -221,25 +221,21 @@ let mGameRenderer = (data = {}, mDOM) => {
                                     // "x": 30,
                                     // "y": 70,
                                     "e": mE,
-                                    "src": `${m_asset_path}/screen_1.svg`
+                                    "src": `${m_asset_path}/screen_before_ready.svg`
                                 }, {
                                     "onLoad": (v = {}) => {
                                         mArtBox_evnt.add_svg({
-                                            "w": `100vw`,
-                                            "h": `100vh`,
-                                            // "x": 30,
-                                            // "y": 70,
+                                            "w": `20vw`,
+                                            "h": `20vh`,
+                                            "x": 18.5,
+                                            "y": 20.9,
                                             "e": mE,
-                                            "src": `${m_asset_path}/listening_screen_1.svg`
+                                            "src": `${m_asset_path}/chat_bubble.svg`
                                         }, {
                                             "onLoad": (v = {}) => {
-                                                setTimeout(() => {
-                                                    v.e.remove();
-                                                    on_scr_end();
-                                                }, 1500);
                                             }
                                         });
-                                        
+
                                     }
                                 });
                                 let on_scr_end = () => {
@@ -255,158 +251,198 @@ let mGameRenderer = (data = {}, mDOM) => {
                         }
                     },
 
-                    // screen 2
-                    
+
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_3.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+                                            setTimeout(() => {
+                                                v.e.style.visibility = "hidden";
+                                            }, 300);
+                                        }
+                                    });
+                                }, 600);
+
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_4.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+                                            setTimeout(() => {
+                                                v.e.style.visibility = "hidden";
+                                            }, 300);
+                                        }
+                                    });
+                                }, 900);
+
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_5.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+                                            setTimeout(() => {
+                                                v.e.style.visibility = "hidden";
+                                            }, 300);
+                                        }
+                                    });
+                                }, 1200);
+
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_6.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+                                            setTimeout(() => {
+                                                v.e.style.visibility = "hidden";
+                                            }, 300);
+                                        }
+                                    });
+                                }, 1500); // [Ends]
+
+                                
+                                // Robot Talking
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_7.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
 
 
+                                            mArtBox_evnt.add_svg({
+                                                "w": `20vw`,
+                                                "h": `20vh`,
+                                                "x": 18.5,
+                                                "y": 20.9,
+                                                "e": mE,
+                                                "src": `${m_asset_path}/chat_bubble.svg`
+                                            }, {
+                                                "onLoad": (v = {}) => {
+                                                    v.e.style.opacity = "0";
 
+                                                    setTimeout(() => {
+                                                        anime({
+                                                            opacity: 1,
+                                                            targets: v.e,
+                                                            scale: [0, 1],
+                                                            duration: 300,
+                                                            easing: 'easeInOutQuad'
+                                                        })
 
+                                                        setTimeout(() => {
+                                                            mArtBox_evnt.add_svg({
+                                                                "w": `9vw`,
+                                                                "h": `10vh`,
+                                                                "x": 23.5,
+                                                                "y": 28,
+                                                                "e": mE,
+                                                                "src": `${m_asset_path}/robot_talking/now_it's_your_turn.svg`
+                                                            }, {
+                                                                "onLoad": (v = {}) => {
+                                                                    
+                                                                }
+                                                            });
+                                                        }, 500);
 
-                    // Screen-3 ----------
-                    // {
-                    //     "name": "Screen 3",
-                    //     "key": "scr_3",
-                    //     "set": (k, v, thisItem) => {
-                    //         console.log(thisItem);
-                    //         v["e"].innerHTML = ``; //reset the screen
-                    //         console.log(v["e"]);
+                                                    }, 500);
 
-                    //         //mSendCB..
-                    //         let mSendCB = (cb_name, p = {}) => {
-                    //             if (v["value"].hasOwnProperty("cb")) {
-                    //                 if (v["value"]["cb"].hasOwnProperty(cb_name)) {
-                    //                     v["value"]["cb"][cb_name](p);
-                    //                 }
-                    //             }
-                    //         };
+                                                    setTimeout(() => {
+                                                        anime({
+                                                            opacity: 0,
+                                                            targets: v.e,
+                                                            scale: [1, 0],
+                                                            duration: 300,
+                                                            easing: 'easeInOutQuad'
+                                                        })
+                                                    }, 3000);
 
+                                                }
+                                            });
 
-                    //         //set..
-                    //         let mScr = document.createElement("div");
-                    //         v["e"].appendChild(mScr);
-                    //         mScr.style.height = `100%`;
-                    //         mScr.style.width = `100%`;
-                    //         mScr.style.overflow = `hidden`;
+                                            mArtBox_evnt.add_svg({
+                                                "w": `20vw`,
+                                                "h": `20vh`,
+                                                "x": 18.5,
+                                                "y": 20.9,
+                                                "e": mE,
+                                                "src": `${m_asset_path}/chat_bubble.svg`
+                                            }, {
+                                                "onLoad": (v = {}) => {
+                                                    v.e.style.opacity = "0";
 
+                                                    setTimeout(() => {
+                                                        anime({
+                                                            opacity: 1,
+                                                            targets: v.e,
+                                                            scale: [0, 1],
+                                                            duration: 300,
+                                                            easing: 'easeInOutQuad'
+                                                        })
 
-                    //         //set..
-                    //         let mSet = (mE = document.body) => {
+                                                        setTimeout(() => {
+                                                            mArtBox_evnt.add_svg({
+                                                                "w": `9vw`,
+                                                                "h": `10vh`,
+                                                                "x": 23.5,
+                                                                "y": 28,
+                                                                "e": mE,
+                                                                "src": `${m_asset_path}/robot_talking/now_it's_your_turn.svg`
+                                                            }, {
+                                                                "onLoad": (v = {}) => {
+                                                                    mArtBox_evnt.add_animation({
+                                                                        "e": v.e,
+                                                                        "type": "animate__slideInRight"
+                                                                    });
 
+                                                                    setTimeout(() => {
+                                                                        v.e.style.visibility = "hidden";
+                                                                    }, 1500);
+                                                                }
+                                                            });
+                                                        }, 500);
 
-                    //             // Word & Leaf Loading:-
-                    //             mArtBox_evnt.add_svg({
-                    //                 "w": `38vw`,
-                    //                 "h": `40vh`,
-                    //                 // "x": 30,
-                    //                 // "y": 30,  --> position absolute makes error here//
-                    //                 "e": mE,
-                    //                 "src": `${m_asset_path}/MacBook Pro 16_ - 49.svg`
-                    //             }, {
-                    //                 "onLoad": (v = {}) => {
-                    //                     console.log(v.e);
-                    //                     v.e.style.opacity = `0`;
-                    //                     v.e.style.display = `flex`;
-                    //                     v.e.style.justifyContent = `center`;
-                    //                     v.e.style.alignItems = `center`;
-                    //                     v.e.style.marginTop = `30vh`;
+                                                    }, 500);
 
-                    //                     setTimeout(() => {
-                    //                         anime({
-                    //                             opacity: 1,
-                    //                             targets: v.e,
-                    //                             scale: [0, 1],
-                    //                             duration: 1500,
-                    //                             direction: 'alternate',
-                    //                             easing: 'easeOutExpo',
-                    //                             loop: false
-                    //                         });
-                    //                     }, 1000);
+                                                    setTimeout(() => {
+                                                        anime({
+                                                            opacity: 0,
+                                                            targets: v.e,
+                                                            scale: [1, 0],
+                                                            duration: 300,
+                                                            easing: 'easeInOutQuad'
+                                                        })
+                                                    }, 3000);
 
-                    //                     anime({
-                    //                         targets: v.e,
-                    //                         scale: [1, 0],
-                    //                         duration: 1000,
-                    //                         direction: 'alternate',
-                    //                         easing: 'easeOutQuad',
-                    //                         loop: false
-                    //                     });
-
-                    //                     setTimeout(() => {
-                    //                         console.log(v.e);
-                    //                         v.e.remove();
-                    //                         about();
-                    //                     }, 3000);
-                    //                 },
-
-                    //             });
-
-
-                    //             // About:-
-                    //             let about = () => {
-                    //                 let value = 1;
-
-                    //                 setTimeout(() => {
-                    //                     mArtBox_evnt.add_svg({
-                    //                         "w": `100vw`,
-                    //                         "h": `100vh`,
-                    //                         // "x": 10,
-                    //                         // "y": 10,
-                    //                         "e": mE,
-                    //                         "src": `${m_asset_path}/MacBook Pro 16_ - 49.svg`
-                    //                     }, {
-                    //                         "onLoad": (v = {}) => {
-                    //                             setTimeout(() => {
-                    //                                 v.e.remove();
-                    //                                 s2();
-                    //                             }, 1000);
-                    //                         }
-                    //                     });
-                    //                 }, 300);
-
-                    //                 let s2 = () => {
-                    //                     mArtBox_evnt.add_svg({
-                    //                         "w": `100vw`,
-                    //                         "h": `100vh`,
-                    //                         // "x": 10,
-                    //                         // "y": 10,
-                    //                         "e": mE,
-                    //                         "src": `${m_asset_path}/MacBook Pro 16_ - 49.svg`
-                    //                     }, {
-                    //                         "onLoad": (v = {}) => {
-                    //                             setTimeout(() => {
-                    //                                 v.e.remove();
-                    //                                 s3();
-                    //                             }, 2000);
-                    //                         }
-                    //                     });
-                    //                 }
-
-                    //                 let s3 = () => {
-                    //                     mArtBox_evnt.add_svg({
-                    //                         "w": `100vw`,
-                    //                         "h": `100vh`,
-                    //                         // "x": 10,
-                    //                         // "y": 10,
-                    //                         "e": mE,
-                    //                         "src": `${m_asset_path}/MacBook Pro 16_ - 49.svg`
-                    //                     }, {
-                    //                         "onLoad": (v = {}) => {
-
-                    //                             setTimeout(() => {
-                    //                                 v.e.remove();
-                    //                                 mSendCB(`on_scr_end`, {});
-                    //                             }, 4000);
-                    //                         }
-                    //                     });
-                    //                 }
-
-                    //             }
-
-                    //         };
-                    //         mSet(mScr);
-                    //     }
-                    // },
-
+                                                }
+                                            });
+                                        }
+                                    });
+                                }, 1800);
 
                                
 
@@ -553,7 +589,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                             //set..
                             let mSet = (mE = document.body) => {
                                 // Score and Round Play:--
-                               
+
                             };
                             mSet(mScr);
                         }
@@ -858,7 +894,7 @@ let mGameRenderer = (data = {}, mDOM) => {
             });
         };
 
-        mDta_main.screens.set(`scr_1`, {
+        mDta_main.screens.set(`scr_2`, {
             "e": mE, //Html-Element
             "value": {
                 //here you can assign your variable based on your requirements..
@@ -866,7 +902,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                 //callback..
                 "cb": {
                     "on_scr_end": (p = {}) => {
-                        scr_2();
+                        // scr_2();
                     },
                 }
 
