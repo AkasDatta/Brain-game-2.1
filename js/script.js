@@ -217,8 +217,6 @@ let mGameRenderer = (data = {}, mDOM) => {
                                 mArtBox_evnt.add_svg({
                                     "w": `100vw`,
                                     "h": `100vh`,
-                                    // "x": 30,
-                                    // "y": 70,
                                     "e": mE,
                                     "src": `${m_asset_path}/screen_before_ready.svg`
                                 }, {
@@ -376,8 +374,6 @@ let mGameRenderer = (data = {}, mDOM) => {
                                     mArtBox_evnt.add_svg({
                                         "w": `100vw`,
                                         "h": `100vh`,
-                                        // "x": 26.5,
-                                        // "y": 28,
                                         "e": mE,
                                         "src": `${m_asset_path}/robot_talking/robot_talking_1.svg`
                                     }, {
@@ -895,6 +891,10 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                             "src": `${m_asset_path}/answer_preview_unmuted.svg`
                                                         });
                                                     }, 2000);
+
+                                                    setTimeout(() => {
+                                                        // on_scr_end();
+                                                    }, 5000);
                                                 }
                                             });
                                         }, 5000);
@@ -904,27 +904,28 @@ let mGameRenderer = (data = {}, mDOM) => {
                                 });
 
                             };
-                            // on_scr_end..
-                            // let on_scr_end = () => {
-                            //     let timeline = anime.timeline();
-                            //     timeline.add({
-                            //         targets: mScr,
-                            //         opacity: 0,
-                            //         duration: 3000,
-                            //         easing: 'easeOutExpo',
-                            //         update: function (anim) {
-                            //             // mSendCB(`on_scr_end`, {});
-                            //             console.log(anim.progress);
 
-                            //             if (anim.progress > 0) {
-                            //                 anime.remove(mScr);
-                            //                 mScr.remove();
-                            //                 //send cb..
-                            //                 mSendCB(`on_scr_end`, {});
-                            //             }
-                            //         },
-                            //     });
-                            // };
+                            // on_scr_end..
+                            let on_scr_end = () => {
+                                let timeline = anime.timeline();
+                                timeline.add({
+                                    targets: mScr,
+                                    opacity: 0,
+                                    duration: 3000,
+                                    easing: 'easeOutExpo',
+                                    update: function (anim) {
+                                        // mSendCB(`on_scr_end`, {});
+                                        console.log(anim.progress);
+
+                                        if (anim.progress > 0) {
+                                            anime.remove(mScr);
+                                            mScr.remove();
+                                            //send cb..
+                                            mSendCB(`on_scr_end`, {});
+                                        }
+                                    },
+                                });
+                            };
 
                             mSet(mScr);
                         }
