@@ -1232,20 +1232,20 @@ let mGameRenderer = (data = {}, mDOM) => {
             });
         };
 
-        // let scr_3 = () => {
-        //     mDta_main.screens.set(`scr_3`, {
-        //         "e": mE,
-        //         "value": {
-        //             //here you can assign your variable based on your requirements..
-        //             //callback..
-        //             "cb": {
-        //                 "on_scr_end": (p = {}) => {
-        //                     scr_4();
-        //                 },
-        //             }
-        //         }
-        //     });
-        // };
+        let scr_3 = () => {
+            mDta_main.screens.set(`scr_3`, {
+                "e": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
+                    //callback..
+                    "cb": {
+                        "on_scr_end": (p = {}) => {
+                            scr_4();
+                        },
+                    }
+                }
+            });
+        };
 
         let scr_2 = () => {
             mDta_main.screens.set(`scr_2`, {
@@ -1262,7 +1262,7 @@ let mGameRenderer = (data = {}, mDOM) => {
             });
         };
 
-        mDta_main.screens.set(`scr_4`, {
+        mDta_main.screens.set(`scr_1`, {
             "e": mE, //Html-Element
             "value": {
                 //here you can assign your variable based on your requirements..
@@ -1270,7 +1270,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                 //callback..
                 "cb": {
                     "on_scr_end": (p = {}) => {
-                        scr_4();
+                        scr_2();
                     },
                 }
 
