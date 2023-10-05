@@ -361,127 +361,8 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                             //set..
                             let mSet = (mE = document.body) => {
-                                setTimeout(() => {
-                                    mArtBox_evnt.add_svg({
-                                        "w": `100vw`,
-                                        "h": `100vh`,
-                                        // "x": 26.5,
-                                        // "y": 28,
-                                        "e": mE,
-                                        "src": `${m_asset_path}/robot_talking/robot_talking_1.svg`
-                                    }, {
-                                        "onLoad": (v = {}) => {
-                                            setTimeout(() => {
-                                                v.e.style.opacity = "0";
-                                            }, 300);
 
-
-                                            setTimeout(() => {
-                                                mArtBox_evnt.add_svg({
-                                                    "w": `100vw`,
-                                                    "h": `100vh`,
-                                                    "x": 0,
-                                                    "y": 0,
-                                                    "e": mE,
-                                                    "src": `${m_asset_path}/robot_talking/robot_talking_2.svg`
-                                                }, {
-                                                    "onLoad": (v = {}) => {
-                                                        setTimeout(() => {
-                                                            v.e.style.opacity = "0";
-                                                        }, 300);
-                                                    }
-                                                });
-                                            }, 300);
-
-                                            setTimeout(() => {
-                                                mArtBox_evnt.add_svg({
-                                                    "w": `100vw`,
-                                                    "h": `100vh`,
-                                                    "x": 0,
-                                                    "y": 0,
-                                                    "e": mE,
-                                                    "src": `${m_asset_path}/robot_talking/robot_talking_3.svg`
-                                                }, {
-                                                    "onLoad": (v = {}) => {
-                                                        setTimeout(() => {
-                                                            v.e.style.visibility = "hidden";
-                                                        }, 300);
-                                                    }
-                                                });
-                                            }, 600);
-
-                                            setTimeout(() => {
-                                                mArtBox_evnt.add_svg({
-                                                    "w": `100vw`,
-                                                    "h": `100vh`,
-                                                    "x": 0,
-                                                    "y": 0,
-                                                    "e": mE,
-                                                    "src": `${m_asset_path}/robot_talking/robot_talking_4.svg`
-                                                }, {
-                                                    "onLoad": (v = {}) => {
-                                                        setTimeout(() => {
-                                                            v.e.style.visibility = "hidden";
-                                                        }, 300);
-                                                    }
-                                                });
-                                            }, 900);
-
-                                            setTimeout(() => {
-                                                mArtBox_evnt.add_svg({
-                                                    "w": `100vw`,
-                                                    "h": `100vh`,
-                                                    "x": 0,
-                                                    "y": 0,
-                                                    "e": mE,
-                                                    "src": `${m_asset_path}/robot_talking/robot_talking_5.svg`
-                                                }, {
-                                                    "onLoad": (v = {}) => {
-                                                        setTimeout(() => {
-                                                            v.e.style.visibility = "hidden";
-                                                        }, 300);
-                                                    }
-                                                });
-                                            }, 1200);
-
-                                            setTimeout(() => {
-                                                mArtBox_evnt.add_svg({
-                                                    "w": `100vw`,
-                                                    "h": `100vh`,
-                                                    "x": 0,
-                                                    "y": 0,
-                                                    "e": mE,
-                                                    "src": `${m_asset_path}/robot_talking/robot_talking_6.svg`
-                                                }, {
-                                                    "onLoad": (v = {}) => {
-                                                        setTimeout(() => {
-                                                            v.e.style.visibility = "hidden";
-                                                        }, 300);
-                                                    }
-                                                });
-                                            }, 1500);
-
-                                            setTimeout(() => {
-                                                mArtBox_evnt.add_svg({
-                                                    "w": `100vw`,
-                                                    "h": `100vh`,
-                                                    "x": 0,
-                                                    "y": 0,
-                                                    "e": mE,
-                                                    "src": `${m_asset_path}/robot_talking/robot_talking_7.svg`
-                                                }, {
-                                                    "onLoad": (v = {}) => {
-                                                        setTimeout(() => {
-                                                            // v.e.style.visibility = "hidden";
-                                                        }, 300);
-                                                    }
-                                                });
-                                            }, 1800);
-                                        }
-                                    });
-                                }, 0);
-
-
+                               
                             };
 
                             mSet(mScr);
@@ -877,7 +758,7 @@ let mGameRenderer = (data = {}, mDOM) => {
             });
         };
 
-        mDta_main.screens.set(`scr_3`, {
+        mDta_main.screens.set(`scr_2`, {
             "e": mE, //Html-Element
             "value": {
                 //here you can assign your variable based on your requirements..
