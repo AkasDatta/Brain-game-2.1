@@ -214,7 +214,120 @@ let mGameRenderer = (data = {}, mDOM) => {
                             //set..
                             let mSet = (mE = document.body) => {
 
-                                js
+                                mArtBox_evnt.add_svg({
+                                    "w": `100vw`,
+                                    "h": `100vh`,
+                                    // "x": 30,
+                                    // "y": 70,
+                                    "e": mE,
+                                    "src": `${m_asset_path}/screen_before_ready.svg`
+                                }, {
+                                    "onLoad": (v = {}) => {
+                                        mArtBox_evnt.add_svg({
+                                            "w": `20vw`,
+                                            "h": `20vh`,
+                                            "x": 18.5,
+                                            "y": 20.9,
+                                            "e": mE,
+                                            "src": `${m_asset_path}/chat_bubble.svg`
+                                        }, {
+                                            "onLoad": (v = {}) => {
+                                                v.e.style.opacity = "0";
+
+                                                setTimeout(() => {
+                                                    anime({
+                                                        opacity: 1,
+                                                        targets: v.e,
+                                                        scale: [0, 1],
+                                                        duration: 300,
+                                                        easing: 'easeInOutQuad'
+                                                    })
+
+                                                    setTimeout(() => {
+                                                        mArtBox_evnt.add_svg({
+                                                            "w": `9vw`,
+                                                            "h": `6vh`,
+                                                            "x": 23.5,
+                                                            "y": 28,
+                                                            "e": mE,
+                                                            "src": `${m_asset_path}/ready.svg`
+                                                        }, {
+                                                            "onLoad": (v = {}) => {
+                                                                setTimeout(() => {
+                                                                    v.e.style.visibility = "hidden";
+                                                                }, 500);
+                                                            }
+                                                        });
+                                                    }, 500);
+
+                                                    setTimeout(() => {
+                                                        mArtBox_evnt.add_svg({
+                                                            "w": `3vw`,
+                                                            "h": `8vh`,
+                                                            "x": 26.5,
+                                                            "y": 28,
+                                                            "e": mE,
+                                                            "src": `${m_asset_path}/1.svg`
+                                                        }, {
+                                                            "onLoad": (v = {}) => {
+                                                                setTimeout(() => {
+                                                                    v.e.style.visibility = "hidden";
+                                                                }, 500);
+                                                            }
+                                                        });
+                                                    }, 1100);
+
+                                                    setTimeout(() => {
+                                                        mArtBox_evnt.add_svg({
+                                                            "w": `4vw`,
+                                                            "h": `8vh`,
+                                                            "x": 26.5,
+                                                            "y": 28,
+                                                            "e": mE,
+                                                            "src": `${m_asset_path}/2.svg`
+                                                        }, {
+                                                            "onLoad": (v = {}) => {
+                                                                setTimeout(() => {
+                                                                    v.e.style.visibility = "hidden";
+                                                                }, 500);
+                                                            }
+                                                        });
+                                                    }, 1600);
+
+                                                    setTimeout(() => {
+                                                        mArtBox_evnt.add_svg({
+                                                            "w": `4vw`,
+                                                            "h": `8vh`,
+                                                            "x": 26.5,
+                                                            "y": 28,
+                                                            "e": mE,
+                                                            "src": `${m_asset_path}/3.svg`
+                                                        }, {
+                                                            "onLoad": (v = {}) => {
+                                                                setTimeout(() => {
+                                                                    v.e.style.visibility = "hidden";
+                                                                }, 500);
+                                                            }
+                                                        });
+                                                    }, 2100);
+
+                                                }, 500);
+
+                                                setTimeout(() => {
+                                                    anime({
+                                                        opacity: 0,
+                                                        targets: v.e,
+                                                        scale: [1, 0],
+                                                        duration: 300,
+                                                        easing: 'easeInOutQuad'
+                                                    })
+                                                }, 3500);
+                                            }
+                                        });
+
+                                    }
+                                });
+
                             };
                             mSet(mScr);
                         }
@@ -873,7 +986,7 @@ let mGameRenderer = (data = {}, mDOM) => {
             });
         };
 
-        mDta_main.screens.set(`scr_1`, {
+        mDta_main.screens.set(`scr_2`, {
             "e": mE, //Html-Element
             "value": {
                 //here you can assign your variable based on your requirements..
@@ -881,7 +994,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                 //callback..
                 "cb": {
                     "on_scr_end": (p = {}) => {
-                        scr_2();
+                        // scr_2();
                     },
                 }
 
