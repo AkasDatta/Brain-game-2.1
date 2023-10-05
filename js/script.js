@@ -47,7 +47,7 @@ let mGameRenderer = (data = {}, mDOM) => {
             "rndr": { //Renderer..
                 "l": [ //list..
 
-                    // Screen-1 -----------------------------
+                                    // Screen-1 -----------------------------
                     {
                         "name": "Screen 1",
                         "key": "scr_1",
@@ -183,11 +183,12 @@ let mGameRenderer = (data = {}, mDOM) => {
                             mSet(mScr);
                         }
                     },
-
-                    // Screen-2 -----------------------------
+                    
+                    
+                // Screen-2 -----------------------------
                     {
-                        "name": "Screen 2",
-                        "key": "scr_2",
+                        "name": "Screen 3",
+                        "key": "scr_3",
                         "set": (k, v, thisItem) => {
                             console.log(thisItem);
                             v["e"].innerHTML = ``; //reset the screen
@@ -232,53 +233,182 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             "src": `${m_asset_path}/listening_screen_1.svg`
                                         }, {
                                             "onLoad": (v = {}) => {
-        
+                                                setTimeout(() => {
+                                                    v.e.remove();
+                                                    on_scr_end();
+                                                }, 1500);
                                             }
                                         });
                                         
                                     }
                                 });
+                                let on_scr_end = () => {
+                                    setTimeout(() => {
+                                        mScr.remove();
+                                        //send cb..
+                                        mSendCB(`on_scr_end`, {});
+                                    }, 500);
+                                };
 
                             };
                             mSet(mScr);
                         }
                     },
 
-                    // Screen-3 -----------------------------
-                    {
-                        "name": "Screen 3",
-                        "key": "scr_3",
-                        "set": (k, v, thisItem) => {
-                            console.log(thisItem);
-                            //--reset--// [START]
-                            v["e"].innerHTML = ``; //reset
-
-                            //mSendCB..
-                            let mSendCB = (cb_name, p = {}) => {
-                                if (v["value"].hasOwnProperty("cb")) {
-                                    if (v["value"]["cb"].hasOwnProperty(cb_name)) {
-                                        v["value"]["cb"][cb_name](p);
-                                    }
-                                }
-                            };
+                    // screen 2
+                    
 
 
-                            //set..
-                            let mScr = document.createElement("div");
-                            v["e"].appendChild(mScr);
-                            mScr.style.height = `100vh`;
-                            mScr.style.width = `100%`;
-                            mScr.style.overflow = `hidden`;
-
-                            //set..
-                            let mSet = (mE = document.body) => {
 
 
-                            };
 
-                            mSet(mScr);
-                        }
-                    },
+                    // Screen-3 ----------
+                    // {
+                    //     "name": "Screen 3",
+                    //     "key": "scr_3",
+                    //     "set": (k, v, thisItem) => {
+                    //         console.log(thisItem);
+                    //         v["e"].innerHTML = ``; //reset the screen
+                    //         console.log(v["e"]);
+
+                    //         //mSendCB..
+                    //         let mSendCB = (cb_name, p = {}) => {
+                    //             if (v["value"].hasOwnProperty("cb")) {
+                    //                 if (v["value"]["cb"].hasOwnProperty(cb_name)) {
+                    //                     v["value"]["cb"][cb_name](p);
+                    //                 }
+                    //             }
+                    //         };
+
+
+                    //         //set..
+                    //         let mScr = document.createElement("div");
+                    //         v["e"].appendChild(mScr);
+                    //         mScr.style.height = `100%`;
+                    //         mScr.style.width = `100%`;
+                    //         mScr.style.overflow = `hidden`;
+
+
+                    //         //set..
+                    //         let mSet = (mE = document.body) => {
+
+
+                    //             // Word & Leaf Loading:-
+                    //             mArtBox_evnt.add_svg({
+                    //                 "w": `38vw`,
+                    //                 "h": `40vh`,
+                    //                 // "x": 30,
+                    //                 // "y": 30,  --> position absolute makes error here//
+                    //                 "e": mE,
+                    //                 "src": `${m_asset_path}/MacBook Pro 16_ - 49.svg`
+                    //             }, {
+                    //                 "onLoad": (v = {}) => {
+                    //                     console.log(v.e);
+                    //                     v.e.style.opacity = `0`;
+                    //                     v.e.style.display = `flex`;
+                    //                     v.e.style.justifyContent = `center`;
+                    //                     v.e.style.alignItems = `center`;
+                    //                     v.e.style.marginTop = `30vh`;
+
+                    //                     setTimeout(() => {
+                    //                         anime({
+                    //                             opacity: 1,
+                    //                             targets: v.e,
+                    //                             scale: [0, 1],
+                    //                             duration: 1500,
+                    //                             direction: 'alternate',
+                    //                             easing: 'easeOutExpo',
+                    //                             loop: false
+                    //                         });
+                    //                     }, 1000);
+
+                    //                     anime({
+                    //                         targets: v.e,
+                    //                         scale: [1, 0],
+                    //                         duration: 1000,
+                    //                         direction: 'alternate',
+                    //                         easing: 'easeOutQuad',
+                    //                         loop: false
+                    //                     });
+
+                    //                     setTimeout(() => {
+                    //                         console.log(v.e);
+                    //                         v.e.remove();
+                    //                         about();
+                    //                     }, 3000);
+                    //                 },
+
+                    //             });
+
+
+                    //             // About:-
+                    //             let about = () => {
+                    //                 let value = 1;
+
+                    //                 setTimeout(() => {
+                    //                     mArtBox_evnt.add_svg({
+                    //                         "w": `100vw`,
+                    //                         "h": `100vh`,
+                    //                         // "x": 10,
+                    //                         // "y": 10,
+                    //                         "e": mE,
+                    //                         "src": `${m_asset_path}/MacBook Pro 16_ - 49.svg`
+                    //                     }, {
+                    //                         "onLoad": (v = {}) => {
+                    //                             setTimeout(() => {
+                    //                                 v.e.remove();
+                    //                                 s2();
+                    //                             }, 1000);
+                    //                         }
+                    //                     });
+                    //                 }, 300);
+
+                    //                 let s2 = () => {
+                    //                     mArtBox_evnt.add_svg({
+                    //                         "w": `100vw`,
+                    //                         "h": `100vh`,
+                    //                         // "x": 10,
+                    //                         // "y": 10,
+                    //                         "e": mE,
+                    //                         "src": `${m_asset_path}/MacBook Pro 16_ - 49.svg`
+                    //                     }, {
+                    //                         "onLoad": (v = {}) => {
+                    //                             setTimeout(() => {
+                    //                                 v.e.remove();
+                    //                                 s3();
+                    //                             }, 2000);
+                    //                         }
+                    //                     });
+                    //                 }
+
+                    //                 let s3 = () => {
+                    //                     mArtBox_evnt.add_svg({
+                    //                         "w": `100vw`,
+                    //                         "h": `100vh`,
+                    //                         // "x": 10,
+                    //                         // "y": 10,
+                    //                         "e": mE,
+                    //                         "src": `${m_asset_path}/MacBook Pro 16_ - 49.svg`
+                    //                     }, {
+                    //                         "onLoad": (v = {}) => {
+
+                    //                             setTimeout(() => {
+                    //                                 v.e.remove();
+                    //                                 mSendCB(`on_scr_end`, {});
+                    //                             }, 4000);
+                    //                         }
+                    //                     });
+                    //                 }
+
+                    //             }
+
+                    //         };
+                    //         mSet(mScr);
+                    //     }
+                    // },
+
+
+                               
 
                     // Screen-4 -----------------------------
                     {
@@ -520,6 +650,65 @@ let mGameRenderer = (data = {}, mDOM) => {
                             mSet(mScr);
                         }
                     },
+
+                    // Screen-9 ----------
+                    {
+                        "name": "Screen 9",
+                        "key": "scr_9",
+                        "set": (k, v, thisItem) => {
+                            console.log(thisItem);
+                            v["e"].innerHTML = ``; //reset the screen
+                            console.log(v["e"]);
+
+                            //mSendCB..
+                            let mSendCB = (cb_name, p = {}) => {
+                                if (v["value"].hasOwnProperty("cb")) {
+                                    if (v["value"]["cb"].hasOwnProperty(cb_name)) {
+                                        v["value"]["cb"][cb_name](p);
+                                    }
+                                }
+                            };
+
+                            // Create the slideshow container
+                            let mScr = document.createElement("div");
+                            v["e"].appendChild(mScr);
+                            mScr.style.height = `100%`;
+                            mScr.style.width = `100%`;
+                            mScr.style.overflow = `hidden`;
+
+                            // Define image paths
+                            const imagePaths = [
+                                "/assets/LastImage/MacBook Pro 16_ - 49.svg",
+                                "/assets/LastImage/MacBook Pro 16_ - 50.svg",
+                                "/assets/LastImage/MacBook Pro 16_ - 51.svg",
+                                "/assets/LastImage/MacBook Pro 16_ - 52.svg",
+                                "/assets/LastImage/MacBook Pro 16_ - 53.svg",
+                                "/assets/LastImage/MacBook Pro 16_ - .svg",
+                                "/assets/last/MacBook Pro 16_ - 50.svg",
+                                "/assets/last/MacBook Pro 16_ - 51.svg",
+                                "/assets/last/MacBook Pro 16_ - 52.svg",
+                                "/assets/last/MacBook Pro 16_ - 53.svg",
+                                "/assets/last/MacBook Pro 16_ - 54.svg"
+                            ];
+
+                            // Show images in slideshow
+                            let currentImage = 0;
+                            function showNextImage() {
+                                mScr.innerHTML = `<img src="${imagePaths[currentImage]}" alt="Image ${currentImage + 1}">`;
+                                currentImage = (currentImage + 1) % imagePaths.length;
+                                setTimeout(showNextImage, 3000); // Change image every 3 seconds
+                            }
+
+                            showNextImage();
+
+                            //set..
+                            let mSet = (mE = document.body) => {
+                                // You can add additional setup here if needed
+                            };
+                            mSet(mScr);
+                        }
+                    }
+
 
 
 
