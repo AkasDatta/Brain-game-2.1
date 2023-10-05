@@ -214,31 +214,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                             //set..
                             let mSet = (mE = document.body) => {
 
-                                mArtBox_evnt.add_svg({
-                                    "w": `100vw`,
-                                    "h": `100vh`,
-                                    // "x": 30,
-                                    // "y": 70,
-                                    "e": mE,
-                                    "src": `${m_asset_path}/screen_1.svg`
-                                }, {
-                                    "onLoad": (v = {}) => {
-                                        mArtBox_evnt.add_svg({
-                                            "w": `100vw`,
-                                            "h": `100vh`,
-                                            // "x": 30,
-                                            // "y": 70,
-                                            "e": mE,
-                                            "src": `${m_asset_path}/listening_screen_1.svg`
-                                        }, {
-                                            "onLoad": (v = {}) => {
-        
-                                            }
-                                        });
-                                        
-                                    }
-                                });
-
+                                js
                             };
                             mSet(mScr);
                         }
@@ -272,7 +248,235 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                             //set..
                             let mSet = (mE = document.body) => {
+                                // Robot talking animation:- [Starts]
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        // "x": 26.5,
+                                        // "y": 28,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_1.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+                                            setTimeout(() => {
+                                                // console.log(v.e);
+                                                // v.e.style.visibility = "hidden";
+                                                v.e.style.opacity = "0";
+                                            }, 300);
+                                        }
+                                    });
+                                }, 0);
 
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_2.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+                                            setTimeout(() => {
+                                                // v.e.style.opacity = "0";
+                                                v.e.style.visibility = "hidden";
+                                            }, 300);
+                                        }
+                                    });
+                                }, 300);
+
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_3.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+                                            setTimeout(() => {
+                                                v.e.style.visibility = "hidden";
+                                            }, 300);
+                                        }
+                                    });
+                                }, 600);
+
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_4.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+                                            setTimeout(() => {
+                                                v.e.style.visibility = "hidden";
+                                            }, 300);
+                                        }
+                                    });
+                                }, 900);
+
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_5.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+                                            setTimeout(() => {
+                                                v.e.style.visibility = "hidden";
+                                            }, 300);
+                                        }
+                                    });
+                                }, 1200);
+
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_6.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+                                            setTimeout(() => {
+                                                v.e.style.visibility = "hidden";
+                                            }, 300);
+                                        }
+                                    });
+                                }, 1500); // [Ends]
+
+                                
+                                // Robot Talking
+                                setTimeout(() => {
+                                    mArtBox_evnt.add_svg({
+                                        "w": `100vw`,
+                                        "h": `100vh`,
+                                        "x": 0,
+                                        "y": 0,
+                                        "e": mE,
+                                        "src": `${m_asset_path}/robot_talking/robot_talking_7.svg`
+                                    }, {
+                                        "onLoad": (v = {}) => {
+
+
+                                            mArtBox_evnt.add_svg({
+                                                "w": `20vw`,
+                                                "h": `20vh`,
+                                                "x": 18.5,
+                                                "y": 20.9,
+                                                "e": mE,
+                                                "src": `${m_asset_path}/chat_bubble.svg`
+                                            }, {
+                                                "onLoad": (v = {}) => {
+                                                    v.e.style.opacity = "0";
+
+                                                    setTimeout(() => {
+                                                        anime({
+                                                            opacity: 1,
+                                                            targets: v.e,
+                                                            scale: [0, 1],
+                                                            duration: 300,
+                                                            easing: 'easeInOutQuad'
+                                                        })
+
+                                                        setTimeout(() => {
+                                                            mArtBox_evnt.add_svg({
+                                                                "w": `9vw`,
+                                                                "h": `10vh`,
+                                                                "x": 23.5,
+                                                                "y": 28,
+                                                                "e": mE,
+                                                                "src": `${m_asset_path}/robot_talking/now_it's_your_turn.svg`
+                                                            }, {
+                                                                "onLoad": (v = {}) => {
+                                                                    
+                                                                }
+                                                            });
+                                                        }, 500);
+
+                                                    }, 500);
+
+                                                    setTimeout(() => {
+                                                        anime({
+                                                            opacity: 0,
+                                                            targets: v.e,
+                                                            scale: [1, 0],
+                                                            duration: 300,
+                                                            easing: 'easeInOutQuad'
+                                                        })
+                                                    }, 3000);
+
+                                                }
+                                            });
+
+                                            mArtBox_evnt.add_svg({
+                                                "w": `20vw`,
+                                                "h": `20vh`,
+                                                "x": 18.5,
+                                                "y": 20.9,
+                                                "e": mE,
+                                                "src": `${m_asset_path}/chat_bubble.svg`
+                                            }, {
+                                                "onLoad": (v = {}) => {
+                                                    v.e.style.opacity = "0";
+
+                                                    setTimeout(() => {
+                                                        anime({
+                                                            opacity: 1,
+                                                            targets: v.e,
+                                                            scale: [0, 1],
+                                                            duration: 300,
+                                                            easing: 'easeInOutQuad'
+                                                        })
+
+                                                        setTimeout(() => {
+                                                            mArtBox_evnt.add_svg({
+                                                                "w": `9vw`,
+                                                                "h": `10vh`,
+                                                                "x": 23.5,
+                                                                "y": 28,
+                                                                "e": mE,
+                                                                "src": `${m_asset_path}/robot_talking/now_it's_your_turn.svg`
+                                                            }, {
+                                                                "onLoad": (v = {}) => {
+                                                                    mArtBox_evnt.add_animation({
+                                                                        "e": v.e,
+                                                                        "type": "animate__slideInRight"
+                                                                    });
+
+                                                                    setTimeout(() => {
+                                                                        v.e.style.visibility = "hidden";
+                                                                    }, 1500);
+                                                                }
+                                                            });
+                                                        }, 500);
+
+                                                    }, 500);
+
+                                                    setTimeout(() => {
+                                                        anime({
+                                                            opacity: 0,
+                                                            targets: v.e,
+                                                            scale: [1, 0],
+                                                            duration: 300,
+                                                            easing: 'easeInOutQuad'
+                                                        })
+                                                    }, 3000);
+
+                                                }
+                                            });
+                                        }
+                                    });
+                                }, 1800);
 
                             };
 
@@ -423,7 +627,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                             //set..
                             let mSet = (mE = document.body) => {
                                 // Score and Round Play:--
-                               
+
                             };
                             mSet(mScr);
                         }
