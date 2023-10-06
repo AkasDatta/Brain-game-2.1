@@ -191,7 +191,6 @@ let mGameRenderer = (data = {}, mDOM) => {
                         "set": (k, v, thisItem) => {
                             console.log(thisItem);
                             v["e"].innerHTML = ``; //reset the screen
-                            console.log(v["e"]);
 
                             //mSendCB..
                             let mSendCB = (cb_name, p = {}) => {
@@ -760,7 +759,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                     v.e.style.opacity = "0";
                                                     mArtBox_evnt.add_svg({
                                                         "w": `25vw`,
-                                                        "h": `20vh`,
+                                                        "h": `16.5vh`,
                                                         "x": 4.3,
                                                         "y": 0,
                                                         "e": mE,
@@ -1263,7 +1262,7 @@ let mGameRenderer = (data = {}, mDOM) => {
             });
         };
 
-        mDta_main.screens.set(`scr_1`, {
+        mDta_main.screens.set(`scr_2`, {
             "e": mE, //Html-Element
             "value": {
                 //here you can assign your variable based on your requirements..
@@ -1271,7 +1270,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                 //callback..
                 "cb": {
                     "on_scr_end": (p = {}) => {
-                        scr_2();
+                        // scr_2();
                     },
                 }
 
