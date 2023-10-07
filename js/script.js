@@ -233,7 +233,9 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                     anime({
                                                         opacity: 1,
                                                         targets: v.e,
-                                                        scale: [0, 1],
+                                                        // scale: [0, 1],
+                                                        translateX: [10, 0],
+                                                        translateY: [10, 0],
                                                         duration: 300,
                                                         easing: 'easeInOutQuad'
                                                     })
@@ -312,12 +314,14 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                     anime({
                                                         opacity: 0,
                                                         targets: v.e,
-                                                        scale: [1, 0],
+                                                        // scale: [1, 0],
+                                                        translateX: [0, 10],
+                                                        translateY: [0, 10],
                                                         duration: 300,
                                                         easing: 'easeInOutQuad'
                                                     })
                                                     setTimeout(() => {
-                                                       on_scr_end();
+                                                        on_scr_end();
                                                     }, 600);
                                                 }, 3500);
                                             }
@@ -534,7 +538,9 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                         anime({
                                                             opacity: 1,
                                                             targets: v.e,
-                                                            scale: [0, 1],
+                                                            // scale: [0, 1],
+                                                            translateX: [10, 0],
+                                                            translateY: [10, 0],
                                                             duration: 300,
                                                             easing: 'easeInOutQuad'
                                                         })
@@ -730,7 +736,9 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                     anime({
                                                         opacity: 0,
                                                         targets: v.e,
-                                                        scale: [1, 0],
+                                                        // scale: [1, 0],
+                                                        translateX: [0, 10],
+                                                        translateY: [0, 10],
                                                         duration: 300,
                                                         easing: 'easeInOutQuad'
                                                     })
@@ -755,7 +763,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                 setTimeout(() => {
                                                     v.e.style.opacity = "0";
                                                     v.e.style.transition = "transform .5s";
-                                                    
+
                                                     mArtBox_evnt.add_svg({
                                                         "w": `25vw`,
                                                         "h": `16.5vh`,
@@ -784,7 +792,9 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                                 anime({
                                                                     opacity: 1,
                                                                     targets: v.e,
-                                                                    scale: [0, 1],
+                                                                    // scale: [0, 1],
+                                                                    translateX: [10, 0],
+                                                                    translateY: [10, 0],
                                                                     duration: 300,
                                                                     easing: 'easeInOutQuad'
                                                                 })
@@ -878,6 +888,14 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                 "src": `${m_asset_path}/answer_preview_muted.svg`
                                             }, {
                                                 "onLoad": (v = {}) => {
+                                                    v.e.style.opacity = "0";
+                                                    anime({
+                                                        opacity: 1,
+                                                        targets: v.e,
+                                                        scale: [0, 1],
+                                                        duration: 300,
+                                                        easing: 'easeInOutQuad'
+                                                    })
                                                     setTimeout(() => {
                                                         v.e.style.opacity = "0";
                                                         v.e.style.transition = "transform .5s";
@@ -888,12 +906,21 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                             "y": 58,
                                                             "e": mE,
                                                             "src": `${m_asset_path}/answer_preview_unmuted.svg`
+                                                        }, {
+                                                            "onLoad": (v = {}) => {
+                                                                setTimeout(() => {
+                                                                    anime({
+                                                                        opacity: 0,
+                                                                        targets: v.e,
+                                                                        scale: [1, 0],
+                                                                        duration: 300,
+                                                                        easing: 'easeInOutQuad'
+                                                                    })
+                                                                    on_scr_end();
+                                                                }, 4500);
+                                                            }
                                                         });
                                                     }, 2000);
-
-                                                    setTimeout(() => {
-                                                        on_scr_end();
-                                                    }, 4500);
                                                 }
                                             });
                                         }, 5000);
@@ -1047,7 +1074,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         "onLoad": (v = {}) => {
                                             setTimeout(() => {
                                                 v.e.style.transition = "transform .5s";
-                                                v.e.remove();
+                                                // v.e.remove();
                                                 on_scr_end();
                                             }, 1500);
                                         }
@@ -1118,7 +1145,9 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                     anime({
                                                         opacity: 1,
                                                         targets: v.e,
-                                                        scale: [0, 1],
+                                                        // scale: [0, 1],
+                                                        translateX: [10, 0],
+                                                        translateY: [10, 0],
                                                         duration: 300,
                                                         easing: 'easeInOutQuad'
                                                     })
@@ -1197,7 +1226,9 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                     anime({
                                                         opacity: 0,
                                                         targets: v.e,
-                                                        scale: [1, 0],
+                                                        // scale: [1, 0],
+                                                        translateX: [0, 10],
+                                                        translateY: [0, 10],
                                                         duration: 300,
                                                         easing: 'easeInOutQuad'
                                                     })
@@ -1379,10 +1410,6 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             }, {
                                                 "onLoad": (v = {}) => {
                                                     // v.e.style.opacity = "0";
-
-                                                    setTimeout(() => {
-                                                    }, 500);
-
                                                 }
                                             });
 
@@ -1421,6 +1448,8 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                             opacity: 1,
                                                             targets: v.e,
                                                             scale: [0, 1],
+                                                            translateX: [10, 0],
+                                                            translateY: [10, 0],
                                                             duration: 300,
                                                             easing: 'easeInOutQuad'
                                                         })
@@ -1617,7 +1646,9 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                     anime({
                                                         opacity: 0,
                                                         targets: v.e,
-                                                        scale: [1, 0],
+                                                        // scale: [1, 0],
+                                                        translateX: [0, 10],
+                                                        translateY: [0, 10],
                                                         duration: 300,
                                                         easing: 'easeInOutQuad'
                                                     })
@@ -1669,7 +1700,9 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                                 anime({
                                                                     opacity: 1,
                                                                     targets: v.e,
-                                                                    scale: [0, 1],
+                                                                    // scale: [0, 1],
+                                                                    translateX: [10, 0],
+                                                                    translateY: [10, 0],
                                                                     duration: 300,
                                                                     easing: 'easeInOutQuad'
                                                                 })
@@ -1790,6 +1823,13 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                             "src": `${m_asset_path}/rotated_rectangle_small.svg`
                                                         }, {
                                                             "onLoad": (v = {}) => {
+                                                                anime({
+                                                                    opacity: 1,
+                                                                    targets: v.e,
+                                                                    scale: [0.5, 1],
+                                                                    duration: 300,
+                                                                    easing: 'easeInOutQuad'
+                                                                })
                                                                 setTimeout(() => {
                                                                     on_scr_end();
                                                                 }, 1000);
@@ -1920,6 +1960,15 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                 });
 
                                                 setTimeout(() => {
+                                                    anime({
+                                                        opacity: 0,
+                                                        targets: v.e,
+                                                        // scale: [0, 1],
+                                                        translateX: [0, 10],
+                                                        translateY: [0, 10],
+                                                        duration: 300,
+                                                        easing: 'easeInOutQuad'
+                                                    })
                                                     v.e.style.opacity = "0";
                                                 }, 1000);
                                             }
@@ -2070,6 +2119,13 @@ let mGameRenderer = (data = {}, mDOM) => {
                                                     setTimeout(() => {
                                                         // console.log(currentImageIndex, imageSources2.length);
                                                         if (currentImageIndex <= 4) {
+                                                            anime({
+                                                                opacity: 0,
+                                                                targets: v.e,
+                                                                scale: [1, 0],
+                                                                duration: 300,
+                                                                easing: 'easeInOutQuad'
+                                                            })
                                                             v.e.remove();
                                                         }
 
